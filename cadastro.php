@@ -3,6 +3,14 @@
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $confsenha = $_POST['confsenha'];
+
+    if ($nome == "" || $email == "" || $senha == "" || $confsenha == "") {
+        echo "<h3>Existem campos vázio, favor preencher</h3>";
+    }
+    else if ($senha != $confsenha) {
+        echo "<h3>Os campos de senhas não conferem</h3>";
+    }
+    else {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,3 +42,6 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+    }
+?>
